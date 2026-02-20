@@ -1,0 +1,30 @@
+# Scalar Dark - Ghostty Theme
+# Based on the Scalar default dark theme palette
+# https://github.com/scalar/scalar
+
+background = #0f0f0f
+foreground = #e7e7e7
+cursor-color = #e7e7e7
+cursor-text = #0f0f0f
+selection-background = #272727
+selection-foreground = #e7e7e7
+
+# Normal colors (0-7)
+palette = 0=#1a1a1a
+palette = 1=#e53b39
+palette = 2=#00b648
+palette = 3=#ffc90d
+palette = 4=#4eb3ec
+palette = 5=#b191f9
+palette = 6=#4eb3ec
+palette = 7=#a4a4a4
+
+# Bright colors (8-15)
+palette = 8=#797979
+palette = 9=#ff8d4d
+palette = 10=#00b648
+palette = 11=#ffc90d
+palette = 12=#4eb3ec
+palette = 13=#b191f9
+palette = 14=#4eb3ec
+palette = 15=#e7e7e7

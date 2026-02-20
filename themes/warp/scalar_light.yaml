@@ -1,0 +1,28 @@
+# Scalar Light -- Warp terminal theme
+# https://github.com/scalar/scalar
+#
+# Place in ~/.warp/themes/ and select from Warp Settings > Appearance > Themes.
+
+accent: "#007ac2"
+background: "#ffffff"
+foreground: "#1b1b1b"
+details: lighter
+terminal_colors:
+  normal:
+    black: "#1b1b1b"
+    red: "#ef0006"
+    green: "#078657"
+    yellow: "#987100"
+    blue: "#007ac2"
+    magenta: "#5203d1"
+    cyan: "#0a94a8"
+    white: "#8f8f8f"
+  bright:
+    black: "#7d7d7d"
+    red: "#cc4700"
+    green: "#229267"
+    yellow: "#ad840f"
+    blue: "#1f89cc"
+    magenta: "#6420d8"
+    cyan: "#1f9db0"
+    white: "#a8a8a8"

@@ -1,0 +1,30 @@
+# Scalar Light - Ghostty Theme
+# Based on the Scalar default light theme palette
+# https://github.com/scalar/scalar
+
+background = #ffffff
+foreground = #1b1b1b
+cursor-color = #1b1b1b
+cursor-text = #ffffff
+selection-background = #e7e7e7
+selection-foreground = #1b1b1b
+
+# Normal colors (0-7)
+palette = 0=#f6f6f6
+palette = 1=#ef0006
+palette = 2=#078657
+palette = 3=#987100
+palette = 4=#007ac2
+palette = 5=#5203d1
+palette = 6=#007ac2
+palette = 7=#757575
+
+# Bright colors (8-15)
+palette = 8=#7d7d7d
+palette = 9=#cc4700
+palette = 10=#078657
+palette = 11=#987100
+palette = 12=#007ac2
+palette = 13=#5203d1
+palette = 14=#007ac2
+palette = 15=#1b1b1b
