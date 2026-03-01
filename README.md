@@ -229,8 +229,8 @@ Run `npm run check:theme` to verify key contrast and palette updates were applie
 | Background | `#0f0f0f` | ![](https://placehold.co/16x16/0f0f0f/0f0f0f) |
 | Surface | `#1a1a1a` | ![](https://placehold.co/16x16/1a1a1a/1a1a1a) |
 | Highlight | `#272727` | ![](https://placehold.co/16x16/272727/272727) |
-| Foreground | `#e7e7e7` | ![](https://placehold.co/16x16/e7e7e7/e7e7e7) |
-| Secondary | `#a4a4a4` | ![](https://placehold.co/16x16/a4a4a4/a4a4a4) |
+| Foreground | `#d6d6d6` | ![](https://placehold.co/16x16/d6d6d6/d6d6d6) |
+| Secondary | `#9a9a9a` | ![](https://placehold.co/16x16/9a9a9a/9a9a9a) |
 | Muted | `#797979` | ![](https://placehold.co/16x16/797979/797979) |
 | Green | `#00b648` | ![](https://placehold.co/16x16/00b648/00b648) |
 | Red | `#e53b39` | ![](https://placehold.co/16x16/e53b39/e53b39) |

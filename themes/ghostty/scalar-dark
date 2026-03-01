@@ -3,11 +3,11 @@
 # https://github.com/scalar/scalar
 
 background = #0f0f0f
-foreground = #e7e7e7
-cursor-color = #e7e7e7
+foreground = #d6d6d6
+cursor-color = #d6d6d6
 cursor-text = #0f0f0f
 selection-background = #272727
-selection-foreground = #e7e7e7
+selection-foreground = #d6d6d6
 
 # Normal colors (0-7)
 palette = 0=#1a1a1a
@@ -17,7 +17,7 @@ palette = 3=#ffc90d
 palette = 4=#4eb3ec
 palette = 5=#b191f9
 palette = 6=#4eb3ec
-palette = 7=#a4a4a4
+palette = 7=#9a9a9a
 
 # Bright colors (8-15)
 palette = 8=#797979
@@ -27,4 +27,4 @@ palette = 11=#ffc90d
 palette = 12=#4eb3ec
 palette = 13=#b191f9
 palette = 14=#4eb3ec
-palette = 15=#e7e7e7
+palette = 15=#d6d6d6

@@ -32,8 +32,8 @@
     "highlight": "#272727",
 
     // Text colors
-    "foreground": "#e7e7e7",
-    "secondary": "#a4a4a4",
+    "foreground": "#d6d6d6",
+    "secondary": "#9a9a9a",
     "muted": "#797979",
 
     // Accent colors
