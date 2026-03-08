@@ -111,7 +111,9 @@ cp themes/warp/scalar_dark.yaml themes/warp/scalar_light.yaml ~/.warp/themes/
 
 Canonical colors are in `themes/palette.jsonc`.
 
-### Dark
+<table>
+<tr><th>Dark</th><th>Light</th></tr>
+<tr><td>
 
 | Role | Color |
 |---|---|
@@ -129,7 +131,7 @@ Canonical colors are in `themes/palette.jsonc`.
 | Orange | `#ff8d4d` ![](https://placehold.co/16x16/ff8d4d/ff8d4d) |
 | Purple | `#b191f9` ![](https://placehold.co/16x16/b191f9/b191f9) |
 
-### Light
+</td><td>
 
 | Role | Color |
 |---|---|
@@ -146,6 +148,9 @@ Canonical colors are in `themes/palette.jsonc`.
 | Cyan | `#0a94a8` ![](https://placehold.co/16x16/0a94a8/0a94a8) |
 | Orange | `#cc4700` ![](https://placehold.co/16x16/cc4700/cc4700) |
 | Purple | `#5203d1` ![](https://placehold.co/16x16/5203d1/5203d1) |
+
+</td></tr>
+</table>
 
 ```bash
 npm run check:theme
