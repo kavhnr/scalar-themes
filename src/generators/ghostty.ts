@@ -3,15 +3,15 @@ import { palette, type ThemeVariant } from "../palette.js";
 const getBase16 = (variant: ThemeVariant): readonly string[] => {
   const p = palette[variant];
 
-  const ansiBlack = variant === "dark" ? "#3b3934" : "#1f1f1f";
+  const ansiBlack = variant === "dark" ? "#56514b" : "#1f1f1f";
   const ansiWhite = variant === "dark" ? "#b8b2a8" : "#7a7a7a";
   const ansiBrightBlack = variant === "dark" ? "#9b958b" : "#686868";
   const ansiBrightGreen = variant === "dark" ? "#26c466" : "#229267";
-  const ansiBrightYellow = variant === "dark" ? "#ffd33a" : "#ad840f";
+  const ansiBrightYellow = variant === "dark" ? "#ffd33a" : "#9a7410";
   const ansiBrightBlue = variant === "dark" ? "#6bc2f2" : "#1f89cc";
   const ansiBrightPurple = variant === "dark" ? "#c3a6fb" : "#6420d8";
-  const ansiBrightCyan = variant === "dark" ? "#66cedf" : "#1f9db0";
-  const ansiBrightWhite = variant === "dark" ? "#d8d3ca" : "#949494";
+  const ansiBrightCyan = variant === "dark" ? "#66cedf" : "#0f8698";
+  const ansiBrightWhite = variant === "dark" ? "#d8d3ca" : "#767676";
 
   return [
     ansiBlack,

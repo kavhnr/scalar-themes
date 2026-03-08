@@ -136,16 +136,16 @@ Canonical colors are in `themes/palette.jsonc`.
 | Role | Color |
 |---|---|
 | Background | `#e6e6e6` ![](https://placehold.co/16x16/e6e6e6/e6e6e6) |
-| Surface | `#efefef` ![](https://placehold.co/16x16/efefef/efefef) |
-| Highlight | `#cecece` ![](https://placehold.co/16x16/cecece/cecece) |
+| Surface | `#e6e6e6` ![](https://placehold.co/16x16/e6e6e6/e6e6e6) |
+| Highlight | `#d2d2d2` ![](https://placehold.co/16x16/d2d2d2/d2d2d2) |
 | Foreground | `#1f1f1f` ![](https://placehold.co/16x16/1f1f1f/1f1f1f) |
 | Secondary | `#5b5b5b` ![](https://placehold.co/16x16/5b5b5b/5b5b5b) |
 | Muted | `#686868` ![](https://placehold.co/16x16/686868/686868) |
 | Green | `#078657` ![](https://placehold.co/16x16/078657/078657) |
 | Red | `#ef0006` ![](https://placehold.co/16x16/ef0006/ef0006) |
-| Yellow | `#987100` ![](https://placehold.co/16x16/987100/987100) |
+| Yellow | `#866300` ![](https://placehold.co/16x16/866300/866300) |
 | Blue | `#007ac2` ![](https://placehold.co/16x16/007ac2/007ac2) |
-| Cyan | `#0a94a8` ![](https://placehold.co/16x16/0a94a8/0a94a8) |
+| Cyan | `#00758a` ![](https://placehold.co/16x16/00758a/00758a) |
 | Orange | `#cc4700` ![](https://placehold.co/16x16/cc4700/cc4700) |
 | Purple | `#5203d1` ![](https://placehold.co/16x16/5203d1/5203d1) |
 

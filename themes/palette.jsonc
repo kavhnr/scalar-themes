@@ -2,16 +2,16 @@
 {
   "light": {
     "background": "#e6e6e6",
-    "surface": "#efefef",
-    "highlight": "#cecece",
+    "surface": "#e6e6e6",
+    "highlight": "#d2d2d2",
     "foreground": "#1f1f1f",
     "secondary": "#5b5b5b",
     "muted": "#686868",
     "green": "#078657",
     "red": "#ef0006",
-    "yellow": "#987100",
+    "yellow": "#866300",
     "blue": "#007ac2",
-    "cyan": "#0a94a8",
+    "cyan": "#00758a",
     "orange": "#cc4700",
     "purple": "#5203d1"
   },

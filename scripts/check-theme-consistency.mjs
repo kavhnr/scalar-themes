@@ -13,7 +13,9 @@ const requiredChecks = [
       '"muted": "#686868"',
       '"green": "#078657"',
       '"red": "#ef0006"',
-      '"yellow": "#987100"',
+      '"yellow": "#866300"',
+      '"surface": "#e6e6e6"',
+      '"highlight": "#d2d2d2"',
       '"blue": "#007ac2"',
       '"orange": "#cc4700"',
     ],
@@ -24,7 +26,9 @@ const requiredChecks = [
       'muted: "#686868"',
       'green: "#078657"',
       'red: "#ef0006"',
-      'yellow: "#987100"',
+      'yellow: "#866300"',
+      'surface: "#e6e6e6"',
+      'highlight: "#d2d2d2"',
       'blue: "#007ac2"',
       'orange: "#cc4700"',
     ],
@@ -32,20 +36,20 @@ const requiredChecks = [
   {
     file: "themes/zed/scalar.json",
     mustInclude: [
-      '"editor.indent_guide": "#5f5b54"',
+      '"editor.indent_guide": "#5c5851"',
       '"editor.indent_guide_active": "#746f67"',
-      '"editor.indent_guide": "#b5b5b5"',
+      '"editor.indent_guide": "#b2b2b2"',
       '"editor.indent_guide_active": "#9b9b9b"',
-      '"warning": "#987100"',
+      '"warning": "#866300"',
     ],
   },
   {
     file: "themes/neovim/colors/scalar.lua",
     mustInclude: [
-      'yellow    = "#987100"',
-      'indent         = "#5f5b54"',
+      'yellow    = "#866300"',
+      'indent         = "#5c5851"',
       'indent_active  = "#746f67"',
-      'indent         = "#b5b5b5"',
+      'indent         = "#b2b2b2"',
       'indent_active  = "#9b9b9b"',
     ],
   },
@@ -54,7 +58,9 @@ const requiredChecks = [
     mustInclude: [
       '"lightMuted": "#686868"',
       '"lightGreen": "#078657"',
-      '"lightYellow": "#987100"',
+      '"lightYellow": "#866300"',
+      '"lightSurface": "#e6e6e6"',
+      '"lightHighlight": "#d2d2d2"',
       '"lightBlue": "#007ac2"',
       '"lightOrange": "#cc4700"',
       '"darkRed": "#e53b39"',
@@ -62,15 +68,15 @@ const requiredChecks = [
   },
   {
     file: "themes/ghostty/scalar-light",
-    mustInclude: ["palette = 0=#1f1f1f", "palette = 11=#ad840f", "palette = 15=#949494"],
+    mustInclude: ["palette = 0=#1f1f1f", "palette = 11=#9a7410", "palette = 15=#767676"],
   },
   {
     file: "themes/warp/scalar_light.yaml",
-    mustInclude: ['yellow: "#987100"'],
+    mustInclude: ['yellow: "#866300"'],
   },
   {
     file: "themes/neovim/lua/lualine/themes/scalar.lua",
-    mustInclude: ['yellow  = "#987100"'],
+    mustInclude: ['yellow  = "#866300"'],
   },
 ];
 

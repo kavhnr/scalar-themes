@@ -8,7 +8,7 @@ selection-background = #4b4943
 selection-foreground = #d8d3ca
 
 # ANSI colors (0-15)
-palette = 0=#3b3934
+palette = 0=#56514b
 palette = 1=#e53b39
 palette = 2=#00b648
 palette = 3=#ffc90d

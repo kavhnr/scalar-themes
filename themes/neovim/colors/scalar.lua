@@ -38,11 +38,11 @@ local palettes = {
     float_border   = "#4b4943",
     visual         = "#333e43",
     cursor_line    = "#3b3934",
-    indent         = "#5f5b54",
+    indent         = "#5c5851",
     indent_active  = "#746f67",
-    line_nr        = "#9b958b",
+    line_nr        = "#918c82",
     line_nr_cur    = "#d8d3ca",
-    ansi_black     = "#3b3934",
+    ansi_black     = "#56514b",
     ansi_white     = "#b8b2a8",
     ansi_bright_black = "#9b958b",
     ansi_bright_green = "#26c466",
@@ -61,16 +61,16 @@ local palettes = {
 
   light = {
     bg        = "#e6e6e6",
-    surface   = "#efefef",
-    highlight = "#cecece",
+    surface   = "#e6e6e6",
+    highlight = "#d2d2d2",
     fg        = "#1f1f1f",
     secondary = "#5b5b5b",
     muted     = "#686868",
     green     = "#078657",
     red       = "#ef0006",
-    yellow    = "#987100",
+    yellow    = "#866300",
     blue      = "#007ac2",
-    cyan      = "#0a94a8",
+    cyan      = "#00758a",
     orange    = "#cc4700",
     purple    = "#5203d1",
 
@@ -78,25 +78,25 @@ local palettes = {
     float_bg       = "#f4f4f4",
     float_border   = "#c8c8c8",
     visual         = "#c4d6e1",
-    cursor_line    = "#dcdcdc",
-    indent         = "#b5b5b5",
+    cursor_line    = "#d8d8d8",
+    indent         = "#b2b2b2",
     indent_active  = "#9b9b9b",
-    line_nr        = "#686868",
+    line_nr        = "#707070",
     line_nr_cur    = "#1f1f1f",
     ansi_black     = "#1f1f1f",
     ansi_white     = "#7a7a7a",
     ansi_bright_black = "#686868",
     ansi_bright_green = "#229267",
-    ansi_bright_yellow = "#ad840f",
+    ansi_bright_yellow = "#9a7410",
     ansi_bright_blue = "#1f89cc",
     ansi_bright_purple = "#6420d8",
-    ansi_bright_cyan = "#1f9db0",
-    ansi_bright_white = "#949494",
+    ansi_bright_cyan = "#0f8698",
+    ansi_bright_white = "#767676",
     diff_add_bg   = "#dbeee2",
     diff_change_bg = "#efe7d8",
     diff_delete_bg = "#f1dde0",
     search_bg     = "#efe7d8",
-    inc_search_bg = "#987100",
+    inc_search_bg = "#866300",
     inc_search_fg = "#1f1f1f",
   },
 }
@@ -261,20 +261,20 @@ hi("SnippetTabstop", { bg = p.visual })
 -- ---------------------------------------------------------------------------
 
 hi("Comment",        style("comments", { fg = p.muted }))
-hi("String",         { fg = p.blue })
-hi("Character",      { fg = p.blue })
+hi("String",         { fg = p.green })
+hi("Character",      { fg = p.green })
 hi("Number",         { fg = p.yellow })
 hi("Boolean",        { fg = p.yellow })
 hi("Float",          { fg = p.yellow })
 
 hi("Identifier",     style("variables", { fg = p.fg }))
-hi("Function",       style("functions", { fg = p.orange }))
+hi("Function",       style("functions", { fg = p.blue }))
 
 hi("Statement",      { fg = p.purple })
 hi("Conditional",    { fg = p.purple })
 hi("Repeat",         { fg = p.purple })
 hi("Label",          { fg = p.purple })
-hi("Operator",       { fg = p.muted })
+hi("Operator",       { fg = p.secondary })
 hi("Keyword",        style("keywords", { fg = p.purple }))
 hi("Exception",      { fg = p.purple })
 
@@ -284,10 +284,10 @@ hi("Define",         { fg = p.purple })
 hi("Macro",          { fg = p.purple })
 hi("PreCondit",      { fg = p.purple })
 
-hi("Type",           { fg = p.green })
-hi("StorageClass",   { fg = p.green })
-hi("Structure",      { fg = p.green })
-hi("Typedef",        { fg = p.green })
+hi("Type",           { fg = p.orange })
+hi("StorageClass",   { fg = p.orange })
+hi("Structure",      { fg = p.orange })
+hi("Typedef",        { fg = p.orange })
 
 hi("Special",        { fg = p.orange })
 hi("SpecialChar",    { fg = p.orange })
@@ -323,10 +323,10 @@ hi("@constant.macro",      { fg = p.purple })
 hi("@module",              { fg = p.secondary })
 hi("@label",               { fg = p.purple })
 
-hi("@string",              { fg = p.blue })
-hi("@string.escape",       { fg = p.orange })
-hi("@string.regexp",       { fg = p.cyan })
-hi("@string.special",      { fg = p.cyan })
+hi("@string",              { fg = p.green })
+hi("@string.escape",       { fg = p.yellow })
+hi("@string.regexp",       { fg = p.yellow })
+hi("@string.special",      { fg = p.green })
 hi("@string.special.url",  { fg = p.blue, underline = true })
 
 hi("@character",           { fg = p.blue })
@@ -334,30 +334,30 @@ hi("@boolean",             { fg = p.yellow })
 hi("@number",              { fg = p.yellow })
 hi("@number.float",        { fg = p.yellow })
 
-hi("@type",                { fg = p.green })
-hi("@type.builtin",        { fg = p.green, italic = true })
-hi("@type.definition",     { fg = p.green })
+hi("@type",                { fg = p.orange })
+hi("@type.builtin",        { fg = p.orange, italic = true })
+hi("@type.definition",     { fg = p.orange })
 
-hi("@attribute",           { fg = p.purple })
-hi("@attribute.builtin",   { fg = p.purple, italic = true })
+hi("@attribute",           { fg = p.orange })
+hi("@attribute.builtin",   { fg = p.orange, italic = true })
 hi("@property",            { fg = p.secondary })
 
-hi("@function",            style("functions", { fg = p.orange }))
-hi("@function.builtin",    { fg = p.orange, italic = true })
-hi("@function.call",       style("functions", { fg = p.orange }))
+hi("@function",            style("functions", { fg = p.blue }))
+hi("@function.builtin",    { fg = p.blue, italic = true })
+hi("@function.call",       style("functions", { fg = p.blue }))
 hi("@function.macro",      { fg = p.purple })
-hi("@function.method",     style("functions", { fg = p.orange }))
-hi("@function.method.call", style("functions", { fg = p.orange }))
-hi("@constructor",         { fg = p.green })
+hi("@function.method",     style("functions", { fg = p.blue }))
+hi("@function.method.call", style("functions", { fg = p.blue }))
+hi("@constructor",         { fg = p.cyan })
 
-hi("@operator",            { fg = p.muted })
+hi("@operator",            { fg = p.secondary })
 
 hi("@keyword",             style("keywords", { fg = p.purple }))
 hi("@keyword.coroutine",   { fg = p.purple, italic = true })
 hi("@keyword.function",    style("keywords", { fg = p.purple }))
-hi("@keyword.operator",    { fg = p.muted })
+hi("@keyword.operator",    { fg = p.secondary })
 hi("@keyword.import",      style("keywords", { fg = p.purple }))
-hi("@keyword.type",        { fg = p.green })
+hi("@keyword.type",        { fg = p.orange })
 hi("@keyword.modifier",    style("keywords", { fg = p.purple }))
 hi("@keyword.repeat",      style("keywords", { fg = p.purple }))
 hi("@keyword.return",      style("keywords", { fg = p.purple }))
@@ -401,7 +401,7 @@ hi("@diff.delta",          { fg = p.yellow })
 
 hi("@tag",                 { fg = p.purple })
 hi("@tag.builtin",         { fg = p.purple })
-hi("@tag.attribute",       { fg = p.yellow })
+hi("@tag.attribute",       { fg = p.orange })
 hi("@tag.delimiter",       { fg = p.muted })
 
 -- LSP semantic token defaults
@@ -699,8 +699,8 @@ hi("CmpItemKind",              { fg = p.purple })
 hi("CmpGhostText",             { fg = p.muted, italic = true })
 
 hi("CmpItemKindText",          { fg = p.secondary })
-hi("CmpItemKindMethod",        { fg = p.orange })
-hi("CmpItemKindFunction",      { fg = p.orange })
+hi("CmpItemKindMethod",        { fg = p.blue })
+hi("CmpItemKindFunction",      { fg = p.blue })
 hi("CmpItemKindConstructor",   { fg = p.green })
 hi("CmpItemKindField",         { fg = p.secondary })
 hi("CmpItemKindVariable",      { fg = p.secondary })
