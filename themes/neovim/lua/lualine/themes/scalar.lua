@@ -4,10 +4,10 @@
 
 local palettes = {
   dark = {
-    bg      = "#0f0f0f",
-    surface = "#1a1a1a",
-    fg      = "#d6d6d6",
-    muted   = "#797979",
+    bg      = "#2f2e2c",
+    surface = "#35342f",
+    fg      = "#d8d3ca",
+    muted   = "#9b958b",
     green   = "#00b648",
     red     = "#e53b39",
     yellow  = "#ffc90d",
@@ -16,10 +16,10 @@ local palettes = {
     purple  = "#b191f9",
   },
   light = {
-    bg      = "#ffffff",
-    surface = "#f6f6f6",
-    fg      = "#1b1b1b",
-    muted   = "#7d7d7d",
+    bg      = "#e6e6e6",
+    surface = "#efefef",
+    fg      = "#1f1f1f",
+    muted   = "#686868",
     green   = "#078657",
     red     = "#ef0006",
     yellow  = "#987100",

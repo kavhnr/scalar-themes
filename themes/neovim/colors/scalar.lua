@@ -19,65 +19,85 @@ vim.g.colors_name = "scalar"
 
 local palettes = {
   dark = {
-    bg        = "#0f0f0f",
-    surface   = "#1a1a1a",
-    highlight = "#272727",
-    fg        = "#d6d6d6",
-    secondary = "#9a9a9a",
-    muted     = "#797979",
+    bg        = "#2f2e2c",
+    surface   = "#35342f",
+    highlight = "#4b4943",
+    fg        = "#d8d3ca",
+    secondary = "#b8b2a8",
+    muted     = "#9b958b",
     green     = "#00b648",
     red       = "#e53b39",
     yellow    = "#ffc90d",
     blue      = "#4eb3ec",
+    cyan      = "#42bfd3",
     orange    = "#ff8d4d",
     purple    = "#b191f9",
 
     -- Derived colors for UI depth
-    float_bg      = "#1a1a1a",
-    float_border  = "#272727",
-    visual        = "#2a2a3a",
-    cursor_line   = "#1a1a1a",
-    indent        = "#383838",
-    indent_active = "#585858",
-    line_nr       = "#797979",
-    line_nr_cur   = "#d6d6d6",
-    diff_add_bg   = "#0a2e1a",
-    diff_change_bg = "#2a2a0a",
-    diff_delete_bg = "#2e0a0a",
-    search_bg     = "#3a3a0a",
+    float_bg       = "#3b3934",
+    float_border   = "#4b4943",
+    visual         = "#333e43",
+    cursor_line    = "#3b3934",
+    indent         = "#5f5b54",
+    indent_active  = "#746f67",
+    line_nr        = "#9b958b",
+    line_nr_cur    = "#d8d3ca",
+    ansi_black     = "#3b3934",
+    ansi_white     = "#b8b2a8",
+    ansi_bright_black = "#9b958b",
+    ansi_bright_green = "#26c466",
+    ansi_bright_yellow = "#ffd33a",
+    ansi_bright_blue = "#6bc2f2",
+    ansi_bright_purple = "#c3a6fb",
+    ansi_bright_cyan = "#66cedf",
+    ansi_bright_white = "#d8d3ca",
+    diff_add_bg   = "#26372b",
+    diff_change_bg = "#3a3429",
+    diff_delete_bg = "#3e2a2d",
+    search_bg     = "#5a4f34",
     inc_search_bg = "#ffc90d",
-    inc_search_fg = "#0f0f0f",
+    inc_search_fg = "#2f2e2c",
   },
 
   light = {
-    bg        = "#ffffff",
-    surface   = "#f6f6f6",
-    highlight = "#e7e7e7",
-    fg        = "#1b1b1b",
-    secondary = "#757575",
-    muted     = "#7d7d7d",
+    bg        = "#e6e6e6",
+    surface   = "#efefef",
+    highlight = "#cecece",
+    fg        = "#1f1f1f",
+    secondary = "#5b5b5b",
+    muted     = "#686868",
     green     = "#078657",
     red       = "#ef0006",
     yellow    = "#987100",
     blue      = "#007ac2",
+    cyan      = "#0a94a8",
     orange    = "#cc4700",
     purple    = "#5203d1",
 
     -- Derived colors for UI depth
-    float_bg      = "#f6f6f6",
-    float_border  = "#e7e7e7",
-    visual        = "#d8d8e8",
-    cursor_line   = "#f6f6f6",
-    indent        = "#d7d7d7",
-    indent_active = "#b8b8b8",
-    line_nr       = "#7d7d7d",
-    line_nr_cur   = "#1b1b1b",
-    diff_add_bg   = "#d4f5e0",
-    diff_change_bg = "#f5f0d4",
-    diff_delete_bg = "#f5d4d4",
-    search_bg     = "#f5f0d4",
+    float_bg       = "#f4f4f4",
+    float_border   = "#c8c8c8",
+    visual         = "#c4d6e1",
+    cursor_line    = "#dcdcdc",
+    indent         = "#b5b5b5",
+    indent_active  = "#9b9b9b",
+    line_nr        = "#686868",
+    line_nr_cur    = "#1f1f1f",
+    ansi_black     = "#1f1f1f",
+    ansi_white     = "#7a7a7a",
+    ansi_bright_black = "#686868",
+    ansi_bright_green = "#229267",
+    ansi_bright_yellow = "#ad840f",
+    ansi_bright_blue = "#1f89cc",
+    ansi_bright_purple = "#6420d8",
+    ansi_bright_cyan = "#1f9db0",
+    ansi_bright_white = "#949494",
+    diff_add_bg   = "#dbeee2",
+    diff_change_bg = "#efe7d8",
+    diff_delete_bg = "#f1dde0",
+    search_bg     = "#efe7d8",
     inc_search_bg = "#987100",
-    inc_search_fg = "#1b1b1b",
+    inc_search_fg = "#1f1f1f",
   },
 }
 
@@ -112,18 +132,14 @@ end
 
 local opts = merge(defaults, vim.g.scalar_theme_config or {})
 
-if type(vim.g.scalar_transparent) == "boolean" then
-  opts.transparent = vim.g.scalar_transparent
-end
-
 local p = vim.deepcopy(palettes[vim.o.background] or palettes.dark)
 
 local bg_main = opts.transparent and "NONE" or p.bg
 local bg_surface = opts.transparent and "NONE" or p.surface
 local bg_float = (opts.transparent and opts.transparent_floats) and "NONE" or p.float_bg
 local bg_main_nc = (opts.dim_inactive and not opts.transparent) and p.surface or bg_main
-local picker_path = vim.o.background == "light" and "#616161" or p.secondary
-local picker_path_hidden = vim.o.background == "light" and "#707070" or p.muted
+local picker_path = vim.o.background == "light" and "#5d6672" or p.secondary
+local picker_path_hidden = vim.o.background == "light" and "#6a7480" or p.muted
 
 ---@param name string
 ---@param fallback table
@@ -185,7 +201,7 @@ hi("IncSearch",     { fg = p.inc_search_fg, bg = p.inc_search_bg })
 hi("CurSearch",     { fg = p.inc_search_fg, bg = p.orange })
 hi("Substitute",    { fg = p.inc_search_fg, bg = p.red })
 
-hi("MatchParen",    { fg = p.orange, bold = true, underline = true })
+hi("MatchParen",    { fg = p.blue, bold = true, underline = true })
 
 hi("Pmenu",         { fg = p.fg, bg = p.surface })
 hi("PmenuSel",      { fg = p.fg, bg = p.highlight })
@@ -247,9 +263,9 @@ hi("SnippetTabstop", { bg = p.visual })
 hi("Comment",        style("comments", { fg = p.muted }))
 hi("String",         { fg = p.blue })
 hi("Character",      { fg = p.blue })
-hi("Number",         { fg = p.orange })
-hi("Boolean",        { fg = p.orange })
-hi("Float",          { fg = p.orange })
+hi("Number",         { fg = p.yellow })
+hi("Boolean",        { fg = p.yellow })
+hi("Float",          { fg = p.yellow })
 
 hi("Identifier",     style("variables", { fg = p.fg }))
 hi("Function",       style("functions", { fg = p.orange }))
@@ -258,7 +274,7 @@ hi("Statement",      { fg = p.purple })
 hi("Conditional",    { fg = p.purple })
 hi("Repeat",         { fg = p.purple })
 hi("Label",          { fg = p.purple })
-hi("Operator",       { fg = p.secondary })
+hi("Operator",       { fg = p.muted })
 hi("Keyword",        style("keywords", { fg = p.purple }))
 hi("Exception",      { fg = p.purple })
 
@@ -297,26 +313,26 @@ hi("Removed",        { fg = p.red })
 
 hi("@variable",            style("variables", { fg = p.fg }))
 hi("@variable.builtin",    { fg = p.purple, italic = true })
-hi("@variable.parameter",  style("variables", { fg = p.fg }))
-hi("@variable.member",     style("variables", { fg = p.fg }))
+hi("@variable.parameter",  style("variables", { fg = p.secondary }))
+hi("@variable.member",     style("variables", { fg = p.secondary }))
 
-hi("@constant",            { fg = p.fg, bold = true })
+hi("@constant",            { fg = p.yellow, bold = true })
 hi("@constant.builtin",    { fg = p.orange })
 hi("@constant.macro",      { fg = p.purple })
 
-hi("@module",              { fg = p.fg })
+hi("@module",              { fg = p.secondary })
 hi("@label",               { fg = p.purple })
 
 hi("@string",              { fg = p.blue })
 hi("@string.escape",       { fg = p.orange })
-hi("@string.regexp",       { fg = p.orange })
-hi("@string.special",      { fg = p.orange })
+hi("@string.regexp",       { fg = p.cyan })
+hi("@string.special",      { fg = p.cyan })
 hi("@string.special.url",  { fg = p.blue, underline = true })
 
 hi("@character",           { fg = p.blue })
-hi("@boolean",             { fg = p.orange })
-hi("@number",              { fg = p.orange })
-hi("@number.float",        { fg = p.orange })
+hi("@boolean",             { fg = p.yellow })
+hi("@number",              { fg = p.yellow })
+hi("@number.float",        { fg = p.yellow })
 
 hi("@type",                { fg = p.green })
 hi("@type.builtin",        { fg = p.green, italic = true })
@@ -324,7 +340,7 @@ hi("@type.definition",     { fg = p.green })
 
 hi("@attribute",           { fg = p.purple })
 hi("@attribute.builtin",   { fg = p.purple, italic = true })
-hi("@property",            { fg = p.fg })
+hi("@property",            { fg = p.secondary })
 
 hi("@function",            style("functions", { fg = p.orange }))
 hi("@function.builtin",    { fg = p.orange, italic = true })
@@ -334,12 +350,12 @@ hi("@function.method",     style("functions", { fg = p.orange }))
 hi("@function.method.call", style("functions", { fg = p.orange }))
 hi("@constructor",         { fg = p.green })
 
-hi("@operator",            { fg = p.secondary })
+hi("@operator",            { fg = p.muted })
 
 hi("@keyword",             style("keywords", { fg = p.purple }))
 hi("@keyword.coroutine",   { fg = p.purple, italic = true })
 hi("@keyword.function",    style("keywords", { fg = p.purple }))
-hi("@keyword.operator",    { fg = p.secondary })
+hi("@keyword.operator",    { fg = p.muted })
 hi("@keyword.import",      style("keywords", { fg = p.purple }))
 hi("@keyword.type",        { fg = p.green })
 hi("@keyword.modifier",    style("keywords", { fg = p.purple }))
@@ -348,13 +364,13 @@ hi("@keyword.return",      style("keywords", { fg = p.purple }))
 hi("@keyword.debug",       { fg = p.orange })
 hi("@keyword.exception",   style("keywords", { fg = p.purple }))
 hi("@keyword.conditional",          style("keywords", { fg = p.purple }))
-hi("@keyword.conditional.ternary",  { fg = p.secondary })
+hi("@keyword.conditional.ternary",  { fg = p.muted })
 hi("@keyword.directive",            style("keywords", { fg = p.purple }))
 hi("@keyword.directive.define",     style("keywords", { fg = p.purple }))
 
-hi("@punctuation.delimiter",  { fg = p.secondary })
-hi("@punctuation.bracket",    { fg = p.secondary })
-hi("@punctuation.special",    { fg = p.secondary })
+hi("@punctuation.delimiter",  { fg = p.muted })
+hi("@punctuation.bracket",    { fg = p.muted })
+hi("@punctuation.special",    { fg = p.muted })
 
 hi("@comment",             style("comments", { fg = p.muted }))
 hi("@comment.documentation", style("comments", { fg = p.muted }))
@@ -385,8 +401,8 @@ hi("@diff.delta",          { fg = p.yellow })
 
 hi("@tag",                 { fg = p.purple })
 hi("@tag.builtin",         { fg = p.purple })
-hi("@tag.attribute",       { fg = p.orange })
-hi("@tag.delimiter",       { fg = p.secondary })
+hi("@tag.attribute",       { fg = p.yellow })
+hi("@tag.delimiter",       { fg = p.muted })
 
 -- LSP semantic token defaults
 hi("@lsp.type.class",          { link = "@type" })
@@ -420,33 +436,33 @@ hi("@lsp.type.variable",       { link = "@variable" })
 hi("DiagnosticError",             { fg = p.red })
 hi("DiagnosticWarn",              { fg = p.yellow })
 hi("DiagnosticInfo",              { fg = p.blue })
-hi("DiagnosticHint",              { fg = p.muted })
+hi("DiagnosticHint",              { fg = p.secondary })
 hi("DiagnosticOk",                { fg = p.green })
 
 hi("DiagnosticVirtualTextError",  { fg = p.red, italic = true })
 hi("DiagnosticVirtualTextWarn",   { fg = p.yellow, italic = true })
 hi("DiagnosticVirtualTextInfo",   { fg = p.blue, italic = true })
-hi("DiagnosticVirtualTextHint",   { fg = p.muted, italic = true })
+hi("DiagnosticVirtualTextHint",   { fg = p.secondary, italic = true })
 hi("DiagnosticVirtualLinesError", { fg = p.red })
 hi("DiagnosticVirtualLinesWarn",  { fg = p.yellow })
 hi("DiagnosticVirtualLinesInfo",  { fg = p.blue })
-hi("DiagnosticVirtualLinesHint",  { fg = p.muted })
+hi("DiagnosticVirtualLinesHint",  { fg = p.secondary })
 
 hi("DiagnosticUnderlineError",    { undercurl = true, sp = p.red })
 hi("DiagnosticUnderlineWarn",     { undercurl = true, sp = p.yellow })
 hi("DiagnosticUnderlineInfo",     { undercurl = true, sp = p.blue })
-hi("DiagnosticUnderlineHint",     { undercurl = true, sp = p.muted })
+hi("DiagnosticUnderlineHint",     { undercurl = true, sp = p.secondary })
 hi("DiagnosticUnderlineOk",       { undercurl = true, sp = p.green })
 
 hi("DiagnosticFloatingError",     { fg = p.red })
 hi("DiagnosticFloatingWarn",      { fg = p.yellow })
 hi("DiagnosticFloatingInfo",      { fg = p.blue })
-hi("DiagnosticFloatingHint",      { fg = p.muted })
+hi("DiagnosticFloatingHint",      { fg = p.secondary })
 
 hi("DiagnosticSignError",         { fg = p.red })
 hi("DiagnosticSignWarn",          { fg = p.yellow })
 hi("DiagnosticSignInfo",          { fg = p.blue })
-hi("DiagnosticSignHint",          { fg = p.muted })
+hi("DiagnosticSignHint",          { fg = p.secondary })
 hi("DiagnosticSignOk",            { fg = p.green })
 
 -- LSP references
@@ -456,7 +472,7 @@ hi("LspReferenceWrite",           { bg = p.highlight, bold = true })
 hi("LspSignatureActiveParameter", { fg = p.orange, bold = true })
 hi("LspCodeLens",                 { fg = p.muted })
 hi("LspCodeLensSeparator",        { fg = p.highlight })
-hi("LspInlayHint",                { fg = p.muted, italic = true })
+hi("LspInlayHint",                { fg = p.muted, bg = p.surface, italic = true })
 
 -- ---------------------------------------------------------------------------
 -- Diff
@@ -465,7 +481,7 @@ hi("LspInlayHint",                { fg = p.muted, italic = true })
 hi("DiffAdd",      { bg = p.diff_add_bg })
 hi("DiffChange",   { bg = p.diff_change_bg })
 hi("DiffDelete",   { bg = p.diff_delete_bg })
-hi("DiffText",     { bg = p.diff_change_bg, bold = true })
+hi("DiffText",     { fg = p.fg, bg = p.diff_change_bg, bold = true })
 
 -- ---------------------------------------------------------------------------
 -- Git signs (gitsigns.nvim)
@@ -686,12 +702,12 @@ hi("CmpItemKindText",          { fg = p.secondary })
 hi("CmpItemKindMethod",        { fg = p.orange })
 hi("CmpItemKindFunction",      { fg = p.orange })
 hi("CmpItemKindConstructor",   { fg = p.green })
-hi("CmpItemKindField",         { fg = p.fg })
-hi("CmpItemKindVariable",      { fg = p.fg })
+hi("CmpItemKindField",         { fg = p.secondary })
+hi("CmpItemKindVariable",      { fg = p.secondary })
 hi("CmpItemKindClass",         { fg = p.green })
 hi("CmpItemKindInterface",     { fg = p.green })
 hi("CmpItemKindModule",        { fg = p.blue })
-hi("CmpItemKindProperty",      { fg = p.fg })
+hi("CmpItemKindProperty",      { fg = p.secondary })
 hi("CmpItemKindUnit",          { fg = p.secondary })
 hi("CmpItemKindValue",         { fg = p.orange })
 hi("CmpItemKindEnum",          { fg = p.green })
@@ -745,13 +761,13 @@ hi("NavicIconsNamespace",      { fg = p.blue })
 hi("NavicIconsPackage",        { fg = p.blue })
 hi("NavicIconsClass",          { fg = p.green })
 hi("NavicIconsMethod",         { fg = p.orange })
-hi("NavicIconsProperty",       { fg = p.fg })
-hi("NavicIconsField",          { fg = p.fg })
+hi("NavicIconsProperty",       { fg = p.secondary })
+hi("NavicIconsField",          { fg = p.secondary })
 hi("NavicIconsConstructor",    { fg = p.green })
 hi("NavicIconsEnum",           { fg = p.green })
 hi("NavicIconsInterface",      { fg = p.green })
 hi("NavicIconsFunction",       { fg = p.orange })
-hi("NavicIconsVariable",       { fg = p.fg })
+hi("NavicIconsVariable",       { fg = p.secondary })
 hi("NavicIconsConstant",       { fg = p.orange })
 hi("NavicIconsString",         { fg = p.blue })
 hi("NavicIconsNumber",         { fg = p.orange })
@@ -763,7 +779,7 @@ hi("NavicIconsNull",           { fg = p.muted })
 hi("NavicIconsEnumMember",     { fg = p.orange })
 hi("NavicIconsStruct",         { fg = p.green })
 hi("NavicIconsEvent",          { fg = p.purple })
-hi("NavicIconsOperator",       { fg = p.secondary })
+hi("NavicIconsOperator",       { fg = p.muted })
 hi("NavicIconsTypeParameter",  { fg = p.green })
 
 hi("TreesitterContext",        { bg = p.cursor_line })
@@ -772,22 +788,22 @@ hi("TreesitterContextBottom",  { sp = p.highlight, underline = true })
 
 if opts.terminal_colors then
   local tc = {
-    p.surface,
+    p.ansi_black,
     p.red,
     p.green,
     p.yellow,
     p.blue,
     p.purple,
-    p.blue,
-    p.secondary,
-    p.muted,
+    p.cyan,
+    p.ansi_white,
+    p.ansi_bright_black,
     p.orange,
-    p.green,
-    p.yellow,
-    p.blue,
-    p.purple,
-    p.blue,
-    p.fg,
+    p.ansi_bright_green,
+    p.ansi_bright_yellow,
+    p.ansi_bright_blue,
+    p.ansi_bright_purple,
+    p.ansi_bright_cyan,
+    p.ansi_bright_white,
   }
 
   for i, color in ipairs(tc) do

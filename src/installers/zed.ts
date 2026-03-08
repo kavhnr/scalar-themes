@@ -4,22 +4,11 @@ import path from "node:path";
 import { log } from "../log.js";
 import { toolPaths } from "../paths.js";
 
-/**
- * Strips JSONC features (trailing commas, comments) so JSON.parse works.
- * Zed's settings.json uses JSONC syntax.
- */
 const stripJsonc = (input: string): string => {
   const withoutComments = input.replace(/\/\/.*$/gm, "").replace(/\/\*[\s\S]*?\*\//g, "");
   return withoutComments.replace(/,(\s*[}\]])/g, "$1");
 };
 
-/**
- * Installs the Scalar theme for Zed.
- *
- * Copies the theme JSON into Zed's local themes directory and updates
- * settings.json to use Scalar Dark / Scalar Light.
- * https://zed.dev/docs/themes#local-themes
- */
 export const installZed = (): void => {
   const { themesDir, settings, source } = toolPaths.zed;
 

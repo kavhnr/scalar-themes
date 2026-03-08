@@ -4,13 +4,6 @@ import path from "node:path";
 import { log } from "../log.js";
 import { toolPaths } from "../paths.js";
 
-/**
- * Installs the Scalar theme for OpenCode.
- *
- * Copies the adaptive theme JSON into OpenCode's themes directory
- * and updates the config to reference it.
- * Theme file uses { dark, light } variants per key so it auto-adapts.
- */
 export const installOpencode = (): void => {
   const { themesDir, config, source } = toolPaths.opencode;
 

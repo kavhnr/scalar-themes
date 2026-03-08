@@ -4,10 +4,6 @@ import path from "node:path";
 import { log } from "../log.js";
 import { toolPaths } from "../paths.js";
 
-/**
- * Recursively copies a directory, creating parent directories as needed.
- * Used to copy the Neovim theme structure (colors/ and lua/) into the config.
- */
 const copyDir = (src: string, dest: string): void => {
   fs.mkdirSync(dest, { recursive: true });
 
@@ -23,18 +19,6 @@ const copyDir = (src: string, dest: string): void => {
   }
 };
 
-/**
- * Installs the Scalar colorscheme for Neovim.
- *
- * Copies colorscheme files into ~/.config/nvim/colors/ and the lualine
- * theme into ~/.config/nvim/lua/lualine/themes/. This works with both
- * standard Neovim and LazyVim -- no plugin manager configuration needed.
- *
- * After install, set your colorscheme with:
- *   :colorscheme scalar
- * Or in LazyVim:
- *   opts = { colorscheme = "scalar" }
- */
 export const installNeovim = (): void => {
   const { configDir, source } = toolPaths.neovim;
 
@@ -45,7 +29,6 @@ export const installNeovim = (): void => {
     return;
   }
 
-  /** Copy colors/ directory (scalar.lua, scalar-dark.lua, scalar-light.lua) */
   const colorsSource = path.join(source, "colors");
   const colorsDest = path.join(configDir, "colors");
   copyDir(colorsSource, colorsDest);
@@ -53,7 +36,6 @@ export const installNeovim = (): void => {
   const colorFiles = fs.readdirSync(colorsSource).filter((f) => f.endsWith(".lua"));
   log.ok(`Copied ${String(colorFiles.length)} colorscheme files to ${colorsDest}`);
 
-  /** Copy lua/lualine/themes/ for lualine integration */
   const lualineSource = path.join(source, "lua", "lualine", "themes");
   const lualineDest = path.join(configDir, "lua", "lualine", "themes");
 
@@ -62,11 +44,6 @@ export const installNeovim = (): void => {
     log.ok("Copied lualine theme");
   }
 
-  /**
-   * Try to auto-configure LazyVim if the user has the standard LazyVim
-   * plugin config structure. We write a small plugin spec that sets the
-   * colorscheme to "scalar".
-   */
   const pluginsDir = path.join(configDir, "lua", "plugins");
   const specPath = path.join(pluginsDir, "scalar-theme.lua");
 

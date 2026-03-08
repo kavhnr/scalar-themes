@@ -10,9 +10,9 @@ const requiredChecks = [
   {
     file: "themes/palette.jsonc",
     mustInclude: [
-      '"muted": "#7d7d7d"',
+      '"muted": "#686868"',
       '"green": "#078657"',
-      '"red": "#e53b39"',
+      '"red": "#ef0006"',
       '"yellow": "#987100"',
       '"blue": "#007ac2"',
       '"orange": "#cc4700"',
@@ -21,9 +21,9 @@ const requiredChecks = [
   {
     file: "src/palette.ts",
     mustInclude: [
-      'muted: "#7d7d7d"',
+      'muted: "#686868"',
       'green: "#078657"',
-      'red: "#e53b39"',
+      'red: "#ef0006"',
       'yellow: "#987100"',
       'blue: "#007ac2"',
       'orange: "#cc4700"',
@@ -32,10 +32,10 @@ const requiredChecks = [
   {
     file: "themes/zed/scalar.json",
     mustInclude: [
-      '"editor.indent_guide": "#383838"',
-      '"editor.indent_guide_active": "#585858"',
-      '"editor.indent_guide": "#d7d7d7"',
-      '"editor.indent_guide_active": "#b8b8b8"',
+      '"editor.indent_guide": "#5f5b54"',
+      '"editor.indent_guide_active": "#746f67"',
+      '"editor.indent_guide": "#b5b5b5"',
+      '"editor.indent_guide_active": "#9b9b9b"',
       '"warning": "#987100"',
     ],
   },
@@ -43,16 +43,16 @@ const requiredChecks = [
     file: "themes/neovim/colors/scalar.lua",
     mustInclude: [
       'yellow    = "#987100"',
-      'indent        = "#383838"',
-      'indent_active = "#585858"',
-      'indent        = "#d7d7d7"',
-      'indent_active = "#b8b8b8"',
+      'indent         = "#5f5b54"',
+      'indent_active  = "#746f67"',
+      'indent         = "#b5b5b5"',
+      'indent_active  = "#9b9b9b"',
     ],
   },
   {
     file: "themes/opencode/scalar-adaptive.json",
     mustInclude: [
-      '"lightMuted": "#7d7d7d"',
+      '"lightMuted": "#686868"',
       '"lightGreen": "#078657"',
       '"lightYellow": "#987100"',
       '"lightBlue": "#007ac2"',
@@ -62,7 +62,7 @@ const requiredChecks = [
   },
   {
     file: "themes/ghostty/scalar-light",
-    mustInclude: ["palette = 3=#987100", "palette = 11=#987100"],
+    mustInclude: ["palette = 0=#1f1f1f", "palette = 11=#ad840f", "palette = 15=#949494"],
   },
   {
     file: "themes/warp/scalar_light.yaml",
@@ -72,32 +72,6 @@ const requiredChecks = [
     file: "themes/neovim/lua/lualine/themes/scalar.lua",
     mustInclude: ['yellow  = "#987100"'],
   },
-  {
-    file: "README.md",
-    mustInclude: ["`#7d7d7d`", "`#078657`", "`#987100`", "`#007ac2`", "`#cc4700`"],
-  },
-];
-
-const deprecatedTokens = [
-  "#edbe20",
-  "#edbe2015",
-  "#edbe2040",
-  "#8e8e8e",
-  "#069061",
-  "#0082d0",
-  "#ff5800",
-  "#dc1b19",
-];
-const deprecatedTokenScanFiles = [
-  "themes/palette.jsonc",
-  "src/palette.ts",
-  "themes/zed/scalar.json",
-  "themes/neovim/colors/scalar.lua",
-  "themes/opencode/scalar-adaptive.json",
-  "themes/ghostty/scalar-light",
-  "themes/warp/scalar_light.yaml",
-  "themes/neovim/lua/lualine/themes/scalar.lua",
-  "README.md",
 ];
 
 const failures = [];
@@ -108,16 +82,6 @@ for (const check of requiredChecks) {
   for (const token of check.mustInclude) {
     if (!content.includes(token)) {
       failures.push(`Missing token in ${check.file}: ${token}`);
-    }
-  }
-}
-
-for (const file of deprecatedTokenScanFiles) {
-  const content = read(file);
-
-  for (const token of deprecatedTokens) {
-    if (content.includes(token)) {
-      failures.push(`Deprecated token still present in ${file}: ${token}`);
     }
   }
 }

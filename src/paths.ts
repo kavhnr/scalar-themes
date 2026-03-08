@@ -10,16 +10,10 @@ const zedConfigDir =
     ? path.join(process.env.APPDATA ?? path.join(home, "AppData", "Roaming"), "Zed")
     : path.join(xdgConfigHome, "zed");
 
-/**
- * Resolves the root directory of this package.
- * Works both when running from source (dev) and when installed via npm.
- */
 export const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-/** Directory containing the theme asset files. */
 export const themesDir = path.join(packageRoot, "themes");
 
-/** Paths where each tool expects its config and theme files. */
 export const toolPaths = {
   ghostty: {
     xdgConfigDir: path.join(xdgConfigHome, "ghostty"),

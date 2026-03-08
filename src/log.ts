@@ -1,10 +1,3 @@
-/**
- * Minimal logging helpers with color output.
- * Uses ANSI escape codes directly to avoid dependencies.
- *
- * This is a CLI tool -- console.log is the intended output mechanism.
- */
-
 const BLUE = "\x1b[34m";
 const GREEN = "\x1b[32m";
 const YELLOW = "\x1b[33m";
@@ -15,9 +8,7 @@ const RESET = "\x1b[0m";
 
 const PREFIX = `${BLUE}[scalar]${RESET}`;
 
-/** Writes a line to stdout. Wrapper to satisfy the noConsole lint rule. */
 const write = (...args: readonly string[]): void => {
-  // biome-ignore lint/suspicious/noConsole: CLI tool -- stdout is the intended output
   console.log(...args);
 };
 

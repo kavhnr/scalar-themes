@@ -6,9 +6,7 @@ const DIM = "\x1b[2m";
 const BOLD = "\x1b[1m";
 const RESET = "\x1b[0m";
 
-/** Writes a line to stdout. */
 const write = (...args: readonly string[]): void => {
-  // biome-ignore lint/suspicious/noConsole: CLI tool -- stdout is the intended output
   console.log(...args);
 };
 
@@ -18,12 +16,10 @@ interface Choice {
   description: string;
 }
 
-/**
- * Renders an interactive multi-select prompt in the terminal.
- * Users toggle choices with Space and confirm with Enter.
- * Returns the selected values.
- */
-export const multiSelect = (title: string, choices: readonly Choice[]): Promise<string[]> => {
+export const multiSelect = (
+  title: string,
+  choices: readonly Choice[],
+): Promise<string[]> => {
   return new Promise((resolve) => {
     const selected = new Set<number>(choices.map((_, i) => i));
     let cursor = 0;
@@ -34,12 +30,10 @@ export const multiSelect = (title: string, choices: readonly Choice[]): Promise<
       terminal: true,
     });
 
-    /** Hides the terminal cursor during rendering. */
     const hideCursor = (): void => {
       process.stdout.write("\x1b[?25l");
     };
 
-    /** Shows the terminal cursor after we are done. */
     const showCursor = (): void => {
       process.stdout.write("\x1b[?25h");
     };
@@ -56,7 +50,9 @@ export const multiSelect = (title: string, choices: readonly Choice[]): Promise<
         const isCursor = i === cursor;
         const checkbox = isSelected ? `${GREEN}[x]${RESET}` : "[ ]";
         const pointer = isCursor ? `${BLUE}>${RESET}` : " ";
-        const label = isCursor ? `${BOLD}${choice.label}${RESET}` : choice.label;
+        const label = isCursor
+          ? `${BOLD}${choice.label}${RESET}`
+          : choice.label;
         const desc = `${DIM}${choice.description}${RESET}`;
         write(`  ${pointer} ${checkbox} ${label} ${desc}`);
       }
@@ -64,7 +60,6 @@ export const multiSelect = (title: string, choices: readonly Choice[]): Promise<
 
     hideCursor();
 
-    /** Print blank lines first so the "move up" in render() works on first call. */
     const lineCount = choices.length + 4;
     for (let i = 0; i < lineCount; i += 1) {
       write();
@@ -79,21 +74,18 @@ export const multiSelect = (title: string, choices: readonly Choice[]): Promise<
     process.stdin.on("data", (data: Buffer) => {
       const key = data.toString();
 
-      // Up arrow or k
       if (key === "\x1b[A" || key === "k") {
         cursor = (cursor - 1 + choices.length) % choices.length;
         render();
         return;
       }
 
-      // Down arrow or j
       if (key === "\x1b[B" || key === "j") {
         cursor = (cursor + 1) % choices.length;
         render();
         return;
       }
 
-      // Space -- toggle selection
       if (key === " ") {
         if (selected.has(cursor)) {
           selected.delete(cursor);
@@ -104,7 +96,6 @@ export const multiSelect = (title: string, choices: readonly Choice[]): Promise<
         return;
       }
 
-      // Enter -- confirm
       if (key === "\r" || key === "\n") {
         if (process.stdin.isTTY) {
           process.stdin.setRawMode(false);
@@ -116,7 +107,6 @@ export const multiSelect = (title: string, choices: readonly Choice[]): Promise<
         return;
       }
 
-      // Ctrl+C -- abort
       if (key === "\x03") {
         showCursor();
         rl.close();

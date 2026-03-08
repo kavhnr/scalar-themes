@@ -1,7 +1,7 @@
 {
   "name": "scalar-themes",
   "version": "1.0.0",
-  "description": "Scalar-based color themes for Ghostty, Neovim, Zed, OpenCode, and Warp",
+  "description": "Scalar-inspired themes with comfort tuning for Ghostty, Neovim, Zed, OpenCode, and Warp",
   "author": "kavhnr",
   "license": "MIT",
   "type": "module",

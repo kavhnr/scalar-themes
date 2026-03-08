@@ -34,15 +34,10 @@ const run = async (): Promise<void> => {
   const args = process.argv.slice(2);
 
   log.header("Scalar Themes");
-  log.dim("Scalar-based color themes for your terminal and editor\n");
+  log.dim("Scalar-inspired themes with comfort tuning\n");
 
   let selectedIds: string[];
 
-  /**
-   * If CLI args are provided, use them directly.
-   * e.g. `npx scalar-themes ghostty zed`
-   * Use `--all` or no args (interactive) to install everything.
-   */
   if (args.includes("--all")) {
     selectedIds = tools.map((t) => t.id);
   } else if (args.length > 0) {
@@ -57,7 +52,6 @@ const run = async (): Promise<void> => {
 
     selectedIds = args.filter((a) => validIds.has(a));
   } else {
-    /** Interactive mode -- show multi-select prompt. */
     const choices = tools.map((t) => ({
       label: t.label,
       value: t.id,
