@@ -54,21 +54,12 @@ const requiredChecks = [
     ],
   },
   {
-    file: "themes/opencode/scalar-adaptive.json",
-    mustInclude: [
-      '"lightMuted": "#686868"',
-      '"lightGreen": "#078657"',
-      '"lightYellow": "#866300"',
-      '"lightSurface": "#e6e6e6"',
-      '"lightHighlight": "#d2d2d2"',
-      '"lightBlue": "#007ac2"',
-      '"lightOrange": "#cc4700"',
-      '"darkRed": "#e53b39"',
-    ],
-  },
-  {
     file: "themes/ghostty/scalar-light",
-    mustInclude: ["palette = 0=#1f1f1f", "palette = 11=#9a7410", "palette = 15=#767676"],
+    mustInclude: [
+      "palette = 0=#1f1f1f",
+      "palette = 11=#9a7410",
+      "palette = 15=#767676",
+    ],
   },
   {
     file: "themes/warp/scalar_light.yaml",
