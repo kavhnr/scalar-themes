@@ -96,9 +96,12 @@ cp themes/opencode/scalar-adaptive.json ~/.config/opencode/themes/
 
 ```json
 {
+  "$schema": "https://opencode.ai/tui.json",
   "theme": "scalar-adaptive"
 }
 ```
+
+Set this in `~/.config/opencode/tui.json` (or project `tui.json`).
 
 ### Warp
 

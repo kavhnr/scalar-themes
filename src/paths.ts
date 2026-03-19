@@ -40,6 +40,11 @@ export const toolPaths = {
       "opencode",
       "opencode.json",
     ),
+    tuiConfig: path.join(
+      process.env.XDG_CONFIG_HOME ?? path.join(home, ".config"),
+      "opencode",
+      "tui.json",
+    ),
     source: path.join(themesDir, "opencode", "scalar-adaptive.json"),
   },
 

@@ -1,13 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { parseJsonc } from "../jsonc.js";
 import { log } from "../log.js";
 import { toolPaths } from "../paths.js";
-
-const stripJsonc = (input: string): string => {
-  const withoutComments = input.replace(/\/\/.*$/gm, "").replace(/\/\*[\s\S]*?\*\//g, "");
-  return withoutComments.replace(/,(\s*[}\]])/g, "$1");
-};
 
 export const installZed = (): void => {
   const { themesDir, settings, source } = toolPaths.zed;
@@ -24,7 +20,7 @@ export const installZed = (): void => {
 
   try {
     const raw = fs.readFileSync(settings, "utf-8");
-    const data = JSON.parse(stripJsonc(raw)) as Record<string, unknown>;
+    const data = parseJsonc(raw) as Record<string, unknown>;
 
     data.theme = {
       mode: "system",
